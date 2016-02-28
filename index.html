@@ -1,0 +1,9 @@
+---
+title: Home
+description: Recent posts
+weight: 1
+---
+<ul>
+  {% for p in site.posts %}<li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a> - {{ p.date | date_to_long_string }}</li>
+  {% endfor %}
+</ul>

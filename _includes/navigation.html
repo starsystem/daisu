@@ -1,0 +1,4 @@
+<nav>
+  {% assign pages = site.pages | sort: "weight" %}{% for p in pages %}{% unless p.layout != 'default' %}<a href="{{ site.baseurl }}/{{ p.permalink }}">{{ p.title }}</a>{% endunless %}
+  {% endfor %}
+</nav>

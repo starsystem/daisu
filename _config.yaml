@@ -1,0 +1,13 @@
+title: Jekyll-Raw
+baseurl: /jekyll-raw
+description: Raw minimal theme for Jekyll
+permalink: pretty
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+js:
+css:
+  - style
