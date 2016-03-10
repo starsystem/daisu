@@ -35,3 +35,7 @@ An airlock is a device which permits the passage of people and objects between a
 #### Bridge
 
 ![Radiation hazard]({{ site.baseurl }}/assets/images/semiotics/bridge.svg)
+
+#### Computer terminal
+
+![Radiation hazard]({{ site.baseurl }}/assets/images/semiotics/computer_terminal.svg)
