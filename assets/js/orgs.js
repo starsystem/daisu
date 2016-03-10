@@ -59,6 +59,6 @@ function go(url){
     url,
     true
   );
-  xhrObject.setRequestHeader( 'Accept', 'application/vnd.github.raw+json' );
+  xhrObject.setRequestHeader( 'Accept', 'application/vnd.github.ironman-preview+json' );
   xhrObject.send();
 }
