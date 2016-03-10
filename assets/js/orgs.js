@@ -1,6 +1,6 @@
 var path = window.location.host.split( '.' );
 var username = path[0];
-var url = 'https://api.github.com/users/' + username + '/watched';
+var url = 'https://api.github.com/users/' + username + '/orgs';
 
 go(url);
 function go(url){
@@ -10,30 +10,32 @@ function go(url){
       if (xhrObject.status === 200 || xhrObject.status === 304) {
         var response = xhrObject.responseText;
         var json = JSON.parse(response);
-        // console.log(json);
         for (var variable in json) {
           if (json.hasOwnProperty(variable)) {
-            var repolist = json[variable].repo;
-            var starred = json[variable].starred_at;
-            console.log(starred);
+            var repolist = json[variable];
+            console.log(repolist);
             // var div = document.createElement('div');
             // var img = document.createElement('img');
             // img.src = repolist.owner.avatar_url;
             // var ul = document.createElement('ul');
             var li = document.createElement('li');
             var span = document.createElement('span');
-            span.innerHTML = '<br>' + repolist.description;
             var link = document.createElement('a');
-            link.href = repolist.html_url;
-            link.innerHTML = repolist.owner.login + '/<strong>' + repolist.name + '</strong>';
-            var date = document.createElement('em');
-            date.innerHTML = '<br>' + starred;
+            link.href = repolist.url;
+            link.innerHTML = username + '/<strong>' + repolist.login + '</strong>';
+            // var date = document.createElement('em');
+            // date.innerHTML = '<br>' + repolist.created_at;
+            // var homepage = '';
+            // if(repolist.homepage){
+            //   homepage = ' <a href="' + repolist.homepage + '">' + repolist.homepage + '</a>';
+            // }
+            span.innerHTML = '<br>' + repolist.description;
             li.appendChild(link);
             li.appendChild(span);
-            li.appendChild(date);
+            // li.appendChild(date);
             // ul.appendChild(li);
             // div.appendChild(li);
-            document.getElementById('stars').appendChild(li);
+            document.getElementById('repos').appendChild(li);
           }
         }
         var headerLink = xhrObject.getResponseHeader('Link');
@@ -57,6 +59,6 @@ function go(url){
     url,
     true
   );
-  xhrObject.setRequestHeader( 'Accept', 'application/vnd.github.star+json' );
+  xhrObject.setRequestHeader( 'Accept', 'application/vnd.github.beta+json' );
   xhrObject.send();
 }

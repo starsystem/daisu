@@ -1,6 +1,6 @@
 var path = window.location.host.split( '.' );
 var username = path[0];
-var url = 'https://api.github.com/users/petrosh/repos?sort=created';
+var url = 'https://api.github.com/users/' + username + '/repos?sort=created';
 
 go(url);
 function go(url){
