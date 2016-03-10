@@ -1,9 +1,9 @@
 var path = window.location.host.split( '.' );
 var username = path[0];
 var page = 1;
-go(username,page);
-function go(username,page){
-  var url = 'https://api.github.com/users/' + username + '/watched?page=' + page;
+var url = 'https://api.github.com/users/' + username + '/repos?page=' + page;
+go(url);
+function go(url){
   var xhrObject = new XMLHttpRequest();
   xhrObject.onreadystatechange = function() {
     if (xhrObject.readyState === 4) {
@@ -25,10 +25,10 @@ function go(username,page){
           p.appendChild(span);
           document.getElementById('stars').appendChild(p);
         }
-        // if(response != '[]' && page<3){
-        //   page++;
-        //   go(username,page);
-        // }
+        if(response != '[]' && page<3){
+          page++;
+          go(url);
+        }
       }
     }
   };
