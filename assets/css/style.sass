@@ -12,6 +12,9 @@ $pad: 12px
 $pad-big: 19px
 $width: 960px
 
+html
+  overflow-y: scroll
+
 // styles
 body
   font-family: sans-serif
@@ -21,7 +24,7 @@ body
   font-style: normal
   margin: 0 auto
   max-width: 960px
-  line-height: 1.3rem
+  line-height: 1.5rem
 
 section
   padding: 0 $pad
@@ -52,10 +55,24 @@ footer
     text-decoration: none
 
 h1
-  font-size: $font-size-big
+  // font-size: $font-size-big
 
-h2
+h2, em
   font-size: $font-size-medium
   font-weight: 100
   color: $grey
   font-style: oblique
+
+// lists
+
+ul li
+  margin: $pad-big 0
+
+// images
+
+p img
+  width: 100%
+// #stars img
+//   float: left
+//   height: 85px
+//   margin-right: 10px

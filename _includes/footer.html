@@ -1,11 +1,11 @@
 <footer><small><a href="{{ site.github.repository_url }}">{{ site.title }} on GitHub</a></small></footer>
 <!-- LOAD SITE SCRIPTS -->
 {% if site.js %}
-  {% for script in site.js %}<script src="{{ site.baseurl }}/{{ script }}.js"></script>
+  {% for script in site.js %}<script src="{{ site.baseurl }}/assets/js/{{ script }}.js"></script>
   {% endfor %}{% endif %}
 <!-- LOAD PAGE SCRIPTS -->
 {% if page.js %}
-  {% for script in page.js %}<script src="{{ site.baseurl }}/{{ script }}.js"></script>
+  {% for script in page.js %}<script src="{{ site.baseurl }}/assets/js/{{ script }}.js"></script>
   {% endfor %}{% endif %}
 </body>
 </html>
