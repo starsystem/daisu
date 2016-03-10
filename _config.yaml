@@ -1,5 +1,5 @@
 title: Jekyll-Raw
-baseurl: /jekyll-raw
+baseurl: /
 description: Raw minimal theme for Jekyll
 permalink: pretty
 defaults:
