@@ -1,6 +1,6 @@
 var path = window.location.host.split( '.' );
 var username = path[0];
-var url = 'https://api.github.com/users/' + username + '/orgs';
+var url = 'https://api.github.com/users/' + username + '/gists';
 
 go(url);
 function go(url){
@@ -35,7 +35,7 @@ function go(url){
             // li.appendChild(date);
             // ul.appendChild(li);
             // div.appendChild(li);
-            document.getElementById('orgs').appendChild(li);
+            document.getElementById('gists').appendChild(li);
           }
         }
         var headerLink = xhrObject.getResponseHeader('Link');

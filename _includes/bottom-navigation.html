@@ -1,0 +1,4 @@
+<nav>
+  {% assign pages = site.pages | sort: "weight" %}{% for p in pages %}{% unless p.layout != 'default' %}{% unless p.title == 'Home' %}<a href="{{ site.baseurl }}/{{ p.permalink }}"><span class="mega-octicon octicon-{{ p.octicon }}"></span></a>{% endunless %}{% endunless %}
+  {% endfor %}
+</nav>
