@@ -9,8 +9,6 @@ Semiotics is the study of sign processes and meaningful communication.
 
 #### Airlock
 
-An airlock is a device which permits the passage of people and objects between a pressure vessel and its surroundings.
-
 ![Airlock]({{ site.baseurl }}/assets/images/semiotics/airlock.svg)
 
 #### Area shielded from radiation

@@ -1,4 +1,4 @@
 <nav>
-  {% assign pages = site.pages | sort: "weight" %}{% for p in pages %}{% unless p.layout != 'default' %}{% unless p.title == 'Home' %}<a href="{{ site.baseurl }}/{{ p.permalink }}">{{ p.title }}</a>{% endunless %}{% endunless %}
+  {% assign pages = site.pages | sort: "menu" %}{% for p in pages %}{% unless p.layout != 'default' %}{% unless p.menu == 0 %}<a href="{{ site.baseurl }}/{{ p.permalink }}">{{ p.title }}</a>{% endunless %}{% endunless %}
   {% endfor %}
 </nav>
