@@ -12,43 +12,39 @@ function go(url){
         var json = JSON.parse(response);
         for (var variable in json) {
           if (json.hasOwnProperty(variable)) {
+            // GET GISTS
             var repolist = json[variable];
-            // var div = document.createElement('div');
-            // var img = document.createElement('img');
-            // img.src = repolist.owner.avatar_url;
-            // var ul = document.createElement('ul');
+            // PREPARE ELEMENT
             var li = document.createElement('li');
-            var span = document.createElement('span');
-            var desc = span.cloneNode(false);
-            span.innerHTML = ' / ';
+            // FILE LOOP
             var lista = repolist.files;
-            var j = 0;
-            for (var i in lista) {
+            var j = 1;
+            for (var f in lista) {
+              // CREATE LINK
               var link = document.createElement('a');
-              var filelink = lista[i].filename;
+              // GET URL
+              var filelink = lista[f].filename;
               filelink = filelink.toLowerCase();
               var fname = filelink.replace('.', '-');
               link.href = repolist.html_url + '#file-' + fname;
-              link.innerHTML = lista[i].filename;
-              console.log(i,lista);
-              if(j){li.appendChild(span);}
-              j++;
+              link.innerHTML = lista[f].filename;
+              // ADD SEPARATOR
+              var span = document.createElement('span');
+              span.innerHTML = ' / ';
+              // APPEND GIST ITEM
               li.appendChild(link);
+              if(j !== Object.keys(lista).length) li.appendChild(span);
+              j++;
             }
-            // var date = document.createElement('em');
-            // date.innerHTML = '<br>' + repolist.created_at;
-            // var homepage = '';
-            // if(repolist.homepage){
-            //   homepage = ' <a href="' + repolist.homepage + '">' + repolist.homepage + '</a>';
-            // }
+            // DESCRIPTION
+            var desc = document.createElement('span');
             desc.innerHTML = '<br>' + repolist.description;
             li.appendChild(desc);
-            // li.appendChild(date);
-            // ul.appendChild(li);
-            // div.appendChild(li);
+            // ADD TO PAGE
             document.getElementById('gists').appendChild(li);
           }
         }
+        // PAGINATION
         var headerLink = xhrObject.getResponseHeader('Link');
         if(headerLink){
           var pagers = headerLink.split(', ');
@@ -62,6 +58,11 @@ function go(url){
             }
           }
         }
+        // RATE LIMIT
+        var elerate = document.createElement('h2');
+        elerate.innerHTML = 'X-RateLimit-Remaining ' + xhrObject.getResponseHeader('X-RateLimit-Remaining');
+        referenceNode = document.getElementById('gists');
+        referenceNode.parentNode.insertBefore(elerate, referenceNode.nextSibling);
       }
     }
   };
