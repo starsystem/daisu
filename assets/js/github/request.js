@@ -40,3 +40,16 @@ function go(url,cb){
   xhrObject.setRequestHeader( 'Accept', mediatype );
   xhrObject.send();
 }
+
+function convertDate(isoDate){
+  var newDate = new Date(isoDate);
+  var options = {
+    month: "long",
+    year: "numeric"
+  };
+  var optionsDay = {
+    day: "numeric"
+  };
+  var string = newDate.toLocaleDateString('en-US',optionsDay) + ' ' + newDate.toLocaleDateString('en-US',options);
+  return string;
+}

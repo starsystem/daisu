@@ -17,8 +17,9 @@ function repos(json){
       var link = document.createElement('a');
       link.href = repolist.html_url;
       link.innerHTML = repolist.owner.login + '/<strong>' + repolist.name + '</strong>';
-      var date = document.createElement('em');
-      date.innerHTML = '<br>' + repolist.created_at;
+      var date = document.createElement('span');
+      date.classList.add('date');
+      date.innerHTML = '<br>' + convertDate(repolist.created_at);
       var homepage = '';
       if(repolist.homepage){
         homepage = ' <a href="' + repolist.homepage + '">' + repolist.homepage + '</a>';

@@ -19,8 +19,9 @@ function stars(json){
       var link = document.createElement('a');
       link.href = repolist.html_url;
       link.innerHTML = repolist.owner.login + '/<strong>' + repolist.name + '</strong>';
-      var date = document.createElement('em');
-      date.innerHTML = '<br>' + starred;
+      var date = document.createElement('span');
+      date.classList.add('date');
+      date.innerHTML = '<br>' + convertDate(starred);
       li.appendChild(link);
       li.appendChild(span);
       li.appendChild(date);
