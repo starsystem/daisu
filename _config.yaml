@@ -9,5 +9,6 @@ defaults:
     values:
       layout: "default"
 js:
+  - menu
 css:
   - style
