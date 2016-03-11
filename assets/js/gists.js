@@ -13,14 +13,16 @@ function go(url){
         for (var variable in json) {
           if (json.hasOwnProperty(variable)) {
             var repolist = json[variable];
-            console.log(repolist);
             // var div = document.createElement('div');
             // var img = document.createElement('img');
             // img.src = repolist.owner.avatar_url;
             // var ul = document.createElement('ul');
             var li = document.createElement('li');
             var span = document.createElement('span');
+            var desc = span.cloneNode(false);
+            span.innerHTML = ' / ';
             var lista = repolist.files;
+            var j = 0;
             for (var i in lista) {
               var link = document.createElement('a');
               var filelink = lista[i].filename;
@@ -28,6 +30,8 @@ function go(url){
               var fname = filelink.replace('.', '-');
               link.href = repolist.html_url + '#file-' + fname;
               link.innerHTML = lista[i].filename;
+              console.log(i,lista);
+              if(j){li.appendChild(span);j++;}
               li.appendChild(link);
             }
             // var date = document.createElement('em');
@@ -36,8 +40,8 @@ function go(url){
             // if(repolist.homepage){
             //   homepage = ' <a href="' + repolist.homepage + '">' + repolist.homepage + '</a>';
             // }
-            span.innerHTML = '<br>' + repolist.description;
-            li.appendChild(span);
+            desc.innerHTML = '<br>' + repolist.description;
+            li.appendChild(desc);
             // li.appendChild(date);
             // ul.appendChild(li);
             // div.appendChild(li);
