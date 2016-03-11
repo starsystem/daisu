@@ -31,7 +31,8 @@ function go(url){
               link.href = repolist.html_url + '#file-' + fname;
               link.innerHTML = lista[i].filename;
               console.log(i,lista);
-              if(j){li.appendChild(span);j++;}
+              if(j){li.appendChild(span);}
+              j++;
               li.appendChild(link);
             }
             // var date = document.createElement('em');
