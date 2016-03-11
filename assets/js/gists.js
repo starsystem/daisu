@@ -1,6 +1,6 @@
 var path = window.location.host.split( '.' );
 var username = path[0];
-var url = 'https://api.github.com/users/' + username + '/gists';
+var url = 'https://api.github.com/users/' + 'petrosh' + '/gists';
 
 go(url);
 function go(url){
@@ -25,8 +25,12 @@ function go(url){
               // GET URL
               var filelink = lista[f].filename;
               filelink = filelink.toLowerCase();
-              var fname = filelink.replace('.', '-');
-              link.href = repolist.html_url + '#file-' + fname;
+              // REPLACE DOTS AND SPACES WIDTH DASH
+              var fname = filelink.replace(/\.| /g, '-');
+              fname = fname.replace(/^-/g, '');
+              link.href = repolist.html_url;
+              // ADD FILE ANCHOR
+              if(j!==1)link.href+='#file-' + fname;
               link.innerHTML = lista[f].filename;
               // ADD SEPARATOR
               var span = document.createElement('span');

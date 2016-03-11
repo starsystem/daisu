@@ -3,6 +3,8 @@ title: Semiotic standard
 ---
 
 Semiotics is the study of sign processes and meaningful communication.
+![Laundry semiotic]({{ site.baseurl }}/assets/images/semiotics/laundry.jpg)
+**Ron Cobb** designed *semiotic standard* icons for all commercial trans-stellar utility lifter and heavy element transport spacecraft (April 16, 2078).
 ![Semiotic standard icons]({{ site.baseurl }}/assets/images/semiotics/icons.svg)
 
 #### Airlock
@@ -10,8 +12,6 @@ Semiotics is the study of sign processes and meaningful communication.
 An airlock is a device which permits the passage of people and objects between a pressure vessel and its surroundings.
 
 ![Airlock]({{ site.baseurl }}/assets/images/semiotics/airlock.svg)
-
-### Radiations
 
 #### Area shielded from radiation
 
@@ -40,3 +40,15 @@ An airlock is a device which permits the passage of people and objects between a
 #### Computer terminal
 
 ![Radiation hazard]({{ site.baseurl }}/assets/images/semiotics/computer_terminal.svg)
+
+#### Pressurized area
+
+![Pressurized area]({{ site.baseurl }}/assets/images/semiotics/pressurized.svg)
+
+#### Pressurized with artificial gravity
+
+![Pressurized with artificial gravity]({{ site.baseurl }}/assets/images/semiotics/pressurized-and-gravity.svg)
+
+#### Gravity absent
+
+![Gravity absent]({{ site.baseurl }}/assets/images/semiotics/gravity-absent.svg)
