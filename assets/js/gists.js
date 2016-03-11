@@ -20,9 +20,16 @@ function go(url){
             // var ul = document.createElement('ul');
             var li = document.createElement('li');
             var span = document.createElement('span');
-            var link = document.createElement('a');
-            link.href = repolist.url;
-            link.innerHTML = username + '/<strong>' + repolist.login + '</strong>';
+            var lista = repolist.files;
+            for (var i in lista) {
+              var link = document.createElement('a');
+              var filelink = lista[i].filename;
+              filelink = filelink.toLowerCase();
+              var fname = filelink.replace('.', '-');
+              link.href = repolist.html_url + '#file-' + fname;
+              link.innerHTML = lista[i].filename;
+              li.appendChild(link);
+            }
             // var date = document.createElement('em');
             // date.innerHTML = '<br>' + repolist.created_at;
             // var homepage = '';
@@ -30,7 +37,6 @@ function go(url){
             //   homepage = ' <a href="' + repolist.homepage + '">' + repolist.homepage + '</a>';
             // }
             span.innerHTML = '<br>' + repolist.description;
-            li.appendChild(link);
             li.appendChild(span);
             // li.appendChild(date);
             // ul.appendChild(li);
