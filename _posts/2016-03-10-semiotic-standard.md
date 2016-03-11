@@ -3,6 +3,7 @@ title: Semiotic standard
 ---
 
 Semiotics is the study of sign processes and meaningful communication.
+![Semiotic standard icons]({{ site.baseurl }}/assets/images/semiotics/icons.svg)
 
 #### Airlock
 
