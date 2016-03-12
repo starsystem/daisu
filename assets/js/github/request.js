@@ -1,5 +1,5 @@
 var path = window.location.host.split( '.' );
-var username = path[0], username = 'petrosh';
+var username = path[0];
 var cb;
 var eleroot = document.getElementById('root');
 var elepag = document.querySelector("section nav");

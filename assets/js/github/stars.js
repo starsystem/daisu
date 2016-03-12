@@ -1,4 +1,4 @@
-var url = 'https://api.github.com/users/' + 'petrosh' + '/watched';
+var url = 'https://api.github.com/users/' + username + '/watched';
 var mediatype = 'application/vnd.github.star+json';
 cb = function stars(json){
   for (var variable in json) {

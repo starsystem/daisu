@@ -8,8 +8,8 @@ octicon: mark-github
 Hide this page with `menu:0`
 
 * [Stars](/github/stars/)
-* [Repos](/github/repos/)
-* [Orgs](/github/orgs/)
+* [Repositories](/github/repositories/)
+* [Organizations](/github/organizations/)
 * [Gists](/github/gists/)
 * [Collections](/github/collections/)
-* [Board](/github/board/)
+* [Boards](/github/boards/)
