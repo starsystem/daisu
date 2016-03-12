@@ -1,10 +1,6 @@
 var url = 'https://api.github.com/users/' + username + '/gists';
 var mediatype = 'application/vnd.github.full+json';
-var eleroot = 'gists';
-
-go(url,gists);
-
-function gists(json){
+cb = function gists(json){
   for (var variable in json) {
     if (json.hasOwnProperty(variable)) {
       // GET GISTS
@@ -40,7 +36,8 @@ function gists(json){
       desc.innerHTML = '<br>' + repolist.description;
       li.appendChild(desc);
       // ADD TO PAGE
-      document.getElementById(eleroot).appendChild(li);
+      eleroot.appendChild(li);
     }
   }
-}
+};
+go(url,cb);

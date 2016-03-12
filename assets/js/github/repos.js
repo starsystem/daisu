@@ -1,10 +1,6 @@
 var url = 'https://api.github.com/users/' + username + '/repos?sort=created';
 var mediatype = 'application/vnd.github.beta+json';
-var eleroot = 'repos';
-
-go(url,repos);
-
-function repos(json){
+cb = function repos(json){
   for (var variable in json) {
     if (json.hasOwnProperty(variable)) {
       var repolist = json[variable];
@@ -30,7 +26,8 @@ function repos(json){
       li.appendChild(date);
       // ul.appendChild(li);
       // div.appendChild(li);
-      document.getElementById(eleroot).appendChild(li);
+      eleroot.appendChild(li);
     }
   }
-}
+};
+go(url,cb);

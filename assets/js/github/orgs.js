@@ -1,10 +1,6 @@
 var url = 'https://api.github.com/users/' + username + '/orgs';
 var mediatype = 'application/vnd.github.full+json';
-var eleroot = 'orgs';
-
-go(url,orgs);
-
-function orgs(json){
+cb = function orgs(json){
   for (var variable in json) {
     if (json.hasOwnProperty(variable)) {
       var repolist = json[variable];
@@ -29,7 +25,8 @@ function orgs(json){
       // li.appendChild(date);
       // ul.appendChild(li);
       // div.appendChild(li);
-      document.getElementById(eleroot).appendChild(li);
+      eleroot.appendChild(li);
     }
   }
-}
+};
+go(url,cb);

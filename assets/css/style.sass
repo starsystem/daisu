@@ -39,12 +39,12 @@ body > header
   a
     color: $body-color
     text-decoration: none
+    font-weight: 700
     &:hover
       color: $links_color
   nav
     float: right
     a
-      font-weight: 700
       margin-right: $pad
 
 section
@@ -61,6 +61,14 @@ section
         text-decoration: none
         &:hover
           color: $links_color
+  nav
+    display: inline-block
+    a
+      margin-right: 1em
+      &[rel="last"]
+        float: right
+      &[rel="first"]
+        float: left
 
 footer
   border-top: $border

@@ -1,10 +1,6 @@
 var url = 'https://api.github.com/users/' + 'petrosh' + '/watched';
 var mediatype = 'application/vnd.github.star+json';
-var eleroot = 'stars';
-
-go(url,stars);
-
-function stars(json){
+cb = function stars(json){
   for (var variable in json) {
     if (json.hasOwnProperty(variable)) {
       var repolist = json[variable].repo;
@@ -27,7 +23,8 @@ function stars(json){
       li.appendChild(date);
       // ul.appendChild(li);
       // div.appendChild(li);
-      document.getElementById(eleroot).appendChild(li);
+      eleroot.appendChild(li);
     }
   }
-}
+};
+go(url,cb);
