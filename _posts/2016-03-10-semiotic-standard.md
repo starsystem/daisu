@@ -4,8 +4,14 @@ title: Semiotic standard
 
 Semiotics is the study of sign processes and meaningful communication.
 ![Laundry semiotic]({{ site.baseurl }}/assets/images/semiotics/laundry.jpg)
-**Ron Cobb** designed *semiotic standard* icons for all commercial trans-stellar utility lifter and heavy element transport spacecraft (April 16, 2078).
-![Semiotic standard icons]({{ site.baseurl }}/assets/images/semiotics/icons.svg)
+
+---
+
+**Ron Cobb** designed *semiotic standard* icons for all commercial trans-stellar utility lifter and heavy element transport spacecraft (April 16, 2078)  
+
+![Semiotic standard icons]({{ site.baseurl }}/assets/images/semiotics/semiotic_full.jpg)
+
+---
 
 #### Airlock
 

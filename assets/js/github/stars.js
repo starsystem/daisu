@@ -1,4 +1,4 @@
-var url = 'https://api.github.com/users/' + username + '/watched';
+var url = 'https://api.github.com/users/' + 'petrosh' + '/watched';
 var mediatype = 'application/vnd.github.star+json';
 var eleroot = 'stars';
 

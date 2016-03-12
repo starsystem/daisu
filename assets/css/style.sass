@@ -3,15 +3,16 @@
 // vars
 $body-color: #000
 $body-bg: #fff
-$grey: #7f7f7f
+$grey: {% for c in site.colors %}{{c.grey_color}}{% endfor %}
 $font-size: 18px
 $font-size-medium: 20px
 $font-size-big: 24px
+$font-size-huge: 1.6em
 $border: solid 2px #000
 $pad: 12px
 $pad-big: 19px
 $width: 960px
-$blood: #b33
+$links_color: {% for c in site.colors %}{{c.link_color}}{% endfor %}
 
 html
   overflow-y: scroll
@@ -27,25 +28,39 @@ body
   max-width: 960px
   line-height: 1.5rem
 
-section
-  padding: 0 $pad
-  font-size: $font-size-medium
+// colors
+a
+  color: $links_color
 
-header
+body > header
+  color: $grey
   border-bottom: $border
-  margin-bottom: 30px
   padding: $pad-big $pad
   a
     color: $body-color
-    font-weight: 700
     text-decoration: none
     &:hover
-      color: $blood
+      color: $links_color
   nav
     float: right
-    // text-transform: uppercase
     a
+      font-weight: 700
       margin-right: $pad
+
+section
+  padding: 0 $pad
+  font-size: $font-size-medium
+  header
+    blockquote
+      color: $grey
+      margin: 1em 0
+      font-size: smaller
+      a
+        color: $body-color
+        font-weight: 700
+        text-decoration: none
+        &:hover
+          color: $links_color
 
 footer
   border-top: $border
@@ -58,10 +73,6 @@ footer
   a
     float: right
 
-// colors
-a
-  color: $blood
-
 a.live
   color: $grey
   cursor: default
@@ -72,7 +83,9 @@ span.date
   color: $grey
 
 h1
-  // font-size: $font-size-big
+  font-size: $font-size-huge
+  line-height: $font-size-huge
+  margin: 0.83em 0 0 0
 
 h2
   font-size: $font-size-medium

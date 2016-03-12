@@ -15,12 +15,18 @@ function go(url,cb){
           var pagers = headerLink.split(', ');
           for (var i in pagers) {
             var arr = pagers[i].split('; ');
-            if( arr[1].indexOf('next') > -1 ){
-              var reg = /<(.*?)>/g;
-              var exp = reg.exec(arr[0]);
-              console.log("next "+exp[1]);
-              //go(exp[1],cb);
-            }
+            var reg = /rel="(.*?)"/g;
+            var exp = reg.exec(arr[1]);
+            var text = exp[1];
+            reg = /<(.*?)>/g;
+            exp = reg.exec(arr[0]);
+            var link = exp[1];
+            var pag = document.createElement('a');
+            pag.href='#top';
+            pag.setAttribute('data-link', link);
+            pag.innerHTML = text.charAt(0).toUpperCase() + text.slice(1);
+            // pag.addEventListener('click',go(link,cb),false);
+            document.querySelector("section nav").appendChild(pag);
           }
         }
         // RATE LIMIT
