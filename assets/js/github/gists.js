@@ -1,5 +1,4 @@
 var url = 'https://api.github.com/users/' + username + '/gists';
-var mediatype = 'application/vnd.github.full+json';
 cb = function gists(json){
   for (var variable in json) {
     if (json.hasOwnProperty(variable)) {
@@ -16,13 +15,16 @@ cb = function gists(json){
         // GET URL
         var filelink = lista[f].filename;
         filelink = filelink.toLowerCase();
+        // CREATE URL
         // REPLACE DOTS AND SPACES WIDTH DASH
         var fname = filelink.replace(/\.| /g, '-');
         fname = fname.replace(/^-/g, '');
         link.href = repolist.html_url;
         // ADD FILE ANCHOR
-        if(j!==1)link.href+='#file-' + fname;
-        link.innerHTML = lista[f].filename;
+        if(j !== 1) {
+          link.href += '#file-' + fname;
+          link.innerHTML = lista[f].filename;
+        } else link.innerHTML = bold(lista[f].filename);
         // ADD SEPARATOR
         var span = document.createElement('span');
         span.innerHTML = ' / ';

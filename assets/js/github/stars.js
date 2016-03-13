@@ -1,5 +1,5 @@
 var url = 'https://api.github.com/users/' + username + '/watched';
-var mediatype = 'application/vnd.github.star+json';
+mediatype = 'application/vnd.github.star+json';
 cb = function stars(json){
   for (var variable in json) {
     if (json.hasOwnProperty(variable)) {
@@ -14,7 +14,7 @@ cb = function stars(json){
       span.innerHTML = '<br>' + repolist.description;
       var link = document.createElement('a');
       link.href = repolist.html_url;
-      link.innerHTML = repolist.owner.login + '/<strong>' + repolist.name + '</strong>';
+      link.innerHTML = repolist.owner.login + '/' + bold(repolist.name);
       var date = document.createElement('span');
       date.classList.add('date');
       date.innerHTML = '<br>' + convertDate(starred);

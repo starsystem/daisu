@@ -31,6 +31,10 @@ body
 // colors
 a
   color: $links_color
+  &:hover
+    text-decoration: none
+  &:active
+    color: $body-bg
 
 body > header
   color: $grey
@@ -111,7 +115,12 @@ ul li
 p img
   width: 100%
 
-// permalink
+// helper
 
-#permalink
+.hide
   display: none
+
+// octicons
+
+#root span.octicon
+  font-size: large

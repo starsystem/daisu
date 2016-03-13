@@ -1,4 +1,4 @@
-var url = 'https://api.github.com/users/' + username + '/issues';
+var url = 'https://api.github.com/repos/' + username + '/' + githubRepository + '/labels';
 cb = function issues(json){
   for (var variable in json) {
     if (json.hasOwnProperty(variable)) {

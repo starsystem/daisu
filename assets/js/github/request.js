@@ -1,8 +1,8 @@
-var path = window.location.host.split( '.' );
-var username = path[0];
 var cb;
 var eleroot = document.getElementById('root');
 var elepag = document.querySelector("section nav");
+var mediatype = 'application/vnd.github.full+json';
+
 function go(url,cb){
   var xhrObject = new XMLHttpRequest();
   xhrObject.onreadystatechange = function() {
@@ -76,4 +76,8 @@ function reload(){
   elepag.innerHTML = '';
   var link = this.href;
   go(link,cb);
+}
+
+function bold(string){
+  return '<strong>' + string + '</strong>';
 }
