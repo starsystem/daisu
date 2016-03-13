@@ -4,6 +4,7 @@ var username = path[0];//, username = 'petrosh'
 var perm = document.getElementById('permalink').getAttribute('href');
 var githubUrl = document.getElementById('githubUrl').getAttribute('href');
 var githubRepository = document.getElementById('githubRepository').getAttribute('href');//, githubRepository = 'petrosh.github.io'
+var pagePath = document.getElementById('pagePath').getAttribute('href');
 
 // Link active class on menu
 var listItems = document.querySelectorAll("header nav a");
