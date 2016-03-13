@@ -9,6 +9,7 @@ defaults:
     values:
       layout: "default"
       menu: 0
+      comments: false
 js:
   - menu
 css:

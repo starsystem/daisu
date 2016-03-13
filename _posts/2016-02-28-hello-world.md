@@ -1,5 +1,6 @@
 ---
 title: Hello world
+comments: true
 ---
 
 ### 2006 - 2016

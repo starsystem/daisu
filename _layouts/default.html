@@ -2,14 +2,16 @@
 ---
 {% include head.html %}
 <header>
-  {% include breadcrumb.html %}
+  <a href="/">{{ site.title }}</a>
   {% include navigation.html %}
 </header>
 <section>
   <header>
     <h1>{% if page.octicon %}<span class="mega-octicon octicon-{{ page.octicon }}"></span> {% endif %}{{ page.title }}</h1>
     <h2>{% if page.path contains '_posts' %}{{ page.date | date_to_long_string }}{% else %}{{ page.description }}{% endif %}</h2>
+    {% include breadcrumb.html %}
   </header>
   {{ content }}
+  {% if page.path contains '_posts' and page.comments %}{% include comments.html %}{% endif %}
 </section>
 {% include footer.html %}

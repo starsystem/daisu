@@ -9,3 +9,8 @@ Raw minimal theme for Jekyll based on https://matildah.github.io/
 ### Pagination
 
 * https://developer.github.com/guides/traversing-with-pagination/
+
+### Organizations
+
+* https://developer.github.com/v3/orgs/#list-user-organizations
+* https://help.github.com/articles/publicizing-or-hiding-organization-membership/

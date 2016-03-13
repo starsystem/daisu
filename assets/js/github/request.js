@@ -16,6 +16,9 @@ function go(url,cb){
         if(headerLink){
           var pagers = headerLink.split(', ');
           pagers.reverse();
+          var section = document.querySelector('section');
+          var nav = document.createElement('nav');
+          nav.classList.add('paginator');
           for (var i in pagers) {
             var arr = pagers[i].split('; ');
             // GET REL
@@ -32,18 +35,17 @@ function go(url,cb){
             var link = exp[1];
             var pag = document.createElement('a');
             pag.href=link;
+            // SET ATTRIBUTES AND TEXT
             pag.setAttribute('rel', text);
+            pag.setAttribute('page', pagina);
             pag.innerHTML = text.charAt(0).toUpperCase() + text.slice(1) + ' ' + pagina;
             pag.addEventListener('click',reload,false);
-            elepag.appendChild(pag);
+            nav.appendChild(pag);
           }
+          section.appendChild(nav);
         }
         // RATE LIMIT
-        var elerate = document.createElement('h2');
-        elerate.innerHTML = 'X-RateLimit-Remaining ' + xhrObject.getResponseHeader('X-RateLimit-Remaining');
-        document.getElementById('rate').innerHTML = 'X-RateLimit-Remaining ' + xhrObject.getResponseHeader('X-RateLimit-Remaining');
-        // referenceNode = document.getElementById(eleroot);
-        // referenceNode.parentNode.insertBefore(elerate, referenceNode.nextSibling);
+        if(xhrObject.getResponseHeader('X-RateLimit-Remaining')) document.getElementById('rate').innerHTML = 'X-RateLimit-Remaining ' + xhrObject.getResponseHeader('X-RateLimit-Remaining');
       }
     }
   };
@@ -71,9 +73,10 @@ function convertDate(isoDate){
 
 function reload(){
   event.preventDefault();
+  location.hash = this.getAttribute('page');
   // get pagination link
   eleroot.innerHTML = '';
-  elepag.innerHTML = '';
+  document.querySelector('nav.paginator').remove();
   var link = this.href;
   go(link,cb);
 }

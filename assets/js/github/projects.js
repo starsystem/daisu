@@ -3,6 +3,7 @@ cb = function issues(json){
   for (var variable in json) {
     if (json.hasOwnProperty(variable)) {
       console.log(json[variable]);
+      // {url: "https://api.github.com/repos/petrosh/petrosh.github.io/labels/bug", name: "bug", color: "fc2929"}
       // var repolist = json[variable].repo;
       // var starred = json[variable].starred_at;
       // var li = document.createElement('li');
