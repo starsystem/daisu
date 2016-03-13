@@ -11,6 +11,7 @@ $font-size-huge: 1.6em
 $border: solid 2px #000
 $pad: 12px
 $pad-big: 19px
+$pad-huge: 1.6em
 $width: 960px
 $links_color: {% for c in site.colors %}{{c.link_color}}{% endfor %}
 $nav-bg: whitesmoke
@@ -119,8 +120,14 @@ ul li
 
 // images
 
-p img
-  width: 100%
+img
+  max-width: 100%
+  &.border
+    width: auto
+    display: block
+    margin: $pad-huge auto
+  &.half
+    width: 50%
 
 // helper
 
