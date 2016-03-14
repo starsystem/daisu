@@ -6,7 +6,7 @@ Raw minimal theme for Jekyll based on https://matildah.github.io/
 
 ## Usage
 
-*Try #2*
+*Try #3*
 
 * Fork
 * Press `W` and digit the new branch name `gh-pages`
