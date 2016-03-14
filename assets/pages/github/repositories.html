@@ -24,14 +24,18 @@ cb = function repos(json){
       var li = document.createElement('li');
       var span = document.createElement('span');
       var link = document.createElement('a');
+      var crefor = 'created ';
       link.href = repolist.html_url;
       // CREATE MAIN LINK
       link.innerHTML = bold(repolist.name);
       // CHECK IF FORK
-      if(repolist.fork) fork = ' <span class="octicon octicon-repo-forked"></span>';
+      if(repolist.fork) {
+        fork = ' <span class="octicon octicon-repo-forked"></span>';
+        crefor = 'forked ';
+      }
       var date = document.createElement('span');
       date.classList.add('date');
-      date.innerHTML = '<br>created ' + convertDate(repolist.created_at);
+      date.innerHTML = '<br>' + crefor + convertDate(repolist.created_at);
       // CHECK HOMEPAGE LINK
       if(repolist.homepage) homepage = ' <a href="' + repolist.homepage + '">' + repolist.homepage + '</a>';
       span.innerHTML =  fork + '<br>' + repolist.description + homepage;

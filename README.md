@@ -6,12 +6,12 @@ Raw minimal theme for Jekyll based on https://matildah.github.io/
 
 ## Usage
 
-*Try #3*
+*Try*
 
 * Fork
 * Press `W` and digit the new branch name `gh-pages`
 * Change repository name in Settings
-* Edit `_config.yaml` file *in |gh-pages| branch* `baseurl:`**`/repository-new-name`**
+* *Go in |gh-pages| branch* and edit `_config.yaml` file `baseurl:`**`/repository-new-name`**
 * `http://user-org.github.io/repository-new-name`
 
 ## GitHub API
