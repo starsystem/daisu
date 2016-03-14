@@ -2,12 +2,13 @@
 var path = window.location.host.split( '.' );
 var username = path[0];//, username = 'petrosh'
 
-var pathArray = window.location.host.split( '.' ); // pathArray[0]
+var host = window.location.host;
+var pathArray = host.split( '.' ); // pathArray[0]
 var pathSlash = window.location.pathname.split( '/' ); // pathSlash[1]
 // var pathHash = window.location.hash.substring( 1 ); // Drop #
 var username = pathArray[0];
-var reponame = pathSlash[1] || username + 'github.io';
-console.log(username,reponame);
+var reponame = pathSlash[1] || pathSlash[0];
+console.log(username,reponame,host);
 
 // REQUEST
 var cb;
@@ -108,7 +109,7 @@ function reload(){
   event.preventDefault();
   location.hash = this.getAttribute('page');
   // get pagination link
-  eleroot.innerHTML = '';
+  document.getElementById('root').innerHTML = '';
   document.querySelector('nav.paginator').remove();
   var link = this.href;
   go(link,cb);
