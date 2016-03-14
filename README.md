@@ -6,15 +6,13 @@ Raw minimal theme for Jekyll based on https://matildah.github.io/
 
 ## Usage
 
-*Try #1*
+*Try #2*
 
 * Fork
-* Rename repository
-* New link `https://<new-user-or-org>.github.io/<new-repo-name>`
-* Change title in `_config.yaml`
-* **online after** Create `gh-pages` branch (press `W` and digit branch name)
-
-Result: `404` on `https://starsystem.github.io/assets/css/style.css`
+* Press `W` and digit the new branch name `gh-pages`
+* Change repository name in Settings
+* Edit `_config.yaml` file `baseurl:`**`/repository-new-name`**
+* `http://user-org.github.io/repository-new-name`
 
 ## GitHub API
 
