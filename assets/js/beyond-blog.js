@@ -8,7 +8,7 @@ var pathSlash = window.location.pathname.split( '/' ); // pathSlash[1]
 // var pathHash = window.location.hash.substring( 1 ); // Drop #
 var username = pathArray[0];
 var reponame = pathSlash[1] || pathSlash[0];
-console.log(username,reponame,host);
+console.log('u '+username,'r '+reponame,'h '+host);
 
 // REQUEST
 var cb;
