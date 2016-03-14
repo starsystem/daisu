@@ -14,7 +14,7 @@ https://developer.github.com/guides/traversing-with-pagination/
 <ul id="root"></ul>
 <nav></nav>
 <script type="text/javascript">
-var url = 'https://api.github.com/users/' + username + '/repos?sort=created';
+url = 'https://api.github.com/users/' + username + '/repos?sort=created';
 mediatype = 'application/vnd.github.beta+json';
 cb = function repos(json){
   for (var variable in json) {

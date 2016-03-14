@@ -1,23 +1,25 @@
 // URL
-var path = window.location.host.split( '.' );
-var username = path[0];//, username = 'petrosh'
-
 var host = window.location.host;
 var pathArray = host.split( '.' ); // pathArray[0]
 var pathSlash = window.location.pathname.split( '/' ); // pathSlash[1]
 // var pathHash = window.location.hash.substring( 1 ); // Drop #
 var username = pathArray[0];
 var reponame = pathSlash[1] || pathSlash[0];
+if (username==='127') username = 'petrosh';
+
 
 // REQUEST
-var cb;
-var mediatype = 'application/vnd.github.full+json';
+var cb, url;
+var mediatype = 'application/vnd.github.v3.full+json';
 
 window.onload = function(){
   // GET METADATA
   var perm = document.getElementById('permalink').href;
   var githubUrl = document.getElementById('githubUrl').getAttribute('href');
-  var githubRepository = document.getElementById('githubRepository').getAttribute('href');//, githubRepository = 'petrosh.github.io'
+  var githubRepository = document.getElementById('githubRepository').getAttribute('href');
+
+  if(githubRepository==='') githubRepository = 'petrosh.github.io';
+
   var pagePath = document.getElementById('pagePath').getAttribute('href');
   var elepag = document.querySelector("section nav");
 
@@ -33,7 +35,11 @@ window.onload = function(){
   }
 
   // OWNER OR GUEST
-  log
+  url = 'https://api.github.com/repos/' + username + '/' + githubRepository;
+  cb = function(json){
+    console.log( convertDate(json.created_at), json.owner.type );
+  };
+  go(url,cb);
 };
 
 function go(url,cb){
