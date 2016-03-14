@@ -30,7 +30,7 @@ cb = function stars(json){
       link.innerHTML = repolist.owner.login + '/' + bold(repolist.name);
       var date = document.createElement('span');
       date.classList.add('date');
-      date.innerHTML = '<br>' + convertDate(starred);
+      date.innerHTML = '<br>starred ' + convertDate(starred);
       li.appendChild(link);
       li.appendChild(span);
       li.appendChild(date);
