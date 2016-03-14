@@ -7,5 +7,5 @@ octicon: mark-github
 ---
 {% assign pa = site.pages | where: 'parent', page.title | sort: 'menu' %}
 {% for p in pa %}
-* {% if p.octicon %}<span class="octicon octicon-{{ p.octicon }}"></span> {% endif %}[{{ p.title }}]({{ p.url }})
+* {% if p.octicon %}<span class="octicon octicon-{{ p.octicon }}"></span> {% endif %}[{{ p.title }}]({{ site.baseurl }}{{ p.url }})
 {% endfor %}
