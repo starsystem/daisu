@@ -1,7 +1,40 @@
+// URL
+var path = window.location.host.split( '.' );
+var username = path[0];//, username = 'petrosh'
+
+var pathArray = window.location.host.split( '.' ); // pathArray[0]
+var pathSlash = window.location.pathname.split( '/' ); // pathSlash[1]
+// var pathHash = window.location.hash.substring( 1 ); // Drop #
+var username = pathArray[0];
+var reponame = pathSlash[1] || username + 'github.io';
+console.log(username,reponame);
+
+// REQUEST
 var cb;
-var eleroot = document.getElementById('root');
-var elepag = document.querySelector("section nav");
 var mediatype = 'application/vnd.github.full+json';
+
+window.onload = function(){
+  // GET METADATA
+  var perm = document.getElementById('permalink').href;
+  var githubUrl = document.getElementById('githubUrl').getAttribute('href');
+  var githubRepository = document.getElementById('githubRepository').getAttribute('href');//, githubRepository = 'petrosh.github.io'
+  var pagePath = document.getElementById('pagePath').getAttribute('href');
+  var elepag = document.querySelector("section nav");
+
+  // Link active class on menu
+  var listItems = document.querySelectorAll("header nav a");
+  for (var variable in listItems) {
+    if (listItems.hasOwnProperty(variable)) {
+      if( listItems[variable].getAttribute('href') == perm ){
+        var ele = listItems[variable];
+        ele.classList.add('live');
+      }
+    }
+  }
+
+  // OWNER OR GUEST
+
+};
 
 function go(url,cb){
   var xhrObject = new XMLHttpRequest();

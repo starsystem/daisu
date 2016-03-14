@@ -11,7 +11,7 @@ defaults:
       menu: 0
       comments: false
 js:
-  - menu
+  - beyond-blog
 css:
   - style
 

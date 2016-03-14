@@ -10,5 +10,13 @@
   <!-- LOAD SITE STYLES -->
   {% if site.css %}{% for style in site.css %}<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ style }}.css">
   {% endfor %}{% endif %}
+  <!-- LOAD SITE SCRIPTS -->
+  {% if site.js %}
+    {% for script in site.js %}<script src="{{ site.baseurl }}/assets/js/{{ script }}.js"></script>
+    {% endfor %}{% endif %}
+  <!-- LOAD PAGE SCRIPTS -->
+  {% if page.js %}
+    {% for script in page.js %}<script src="{{ site.baseurl }}/assets/js/{{ script }}.js"></script>
+    {% endfor %}{% endif %}
 </head>
 <body>
