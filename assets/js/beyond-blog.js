@@ -9,12 +9,12 @@ if (username==='127') username = 'petrosh';
 
 
 // REQUEST
-var cb, url;
+var cb, url, thisRepository;
 var mediatype = 'application/vnd.github.v3.full+json';
 
 window.onload = function(){
   // GET METADATA
-  var perm = document.getElementById('permalink').href;
+  var perm = document.getElementById('permalink').getAttribute('href');
   var githubUrl = document.getElementById('githubUrl').getAttribute('href');
   var githubRepository = document.getElementById('githubRepository').getAttribute('href');
 
@@ -27,6 +27,7 @@ window.onload = function(){
   var listItems = document.querySelectorAll("header nav a");
   for (var variable in listItems) {
     if (listItems.hasOwnProperty(variable)) {
+      console.log(listItems[variable].getAttribute('href'),perm);
       if( listItems[variable].getAttribute('href') == perm ){
         var ele = listItems[variable];
         ele.classList.add('live');
@@ -35,11 +36,15 @@ window.onload = function(){
   }
 
   // OWNER OR GUEST
-  url = 'https://api.github.com/repos/' + username + '/' + githubRepository;
-  cb = function(json){
-    console.log( convertDate(json.created_at), json.owner.type );
-  };
-  go(url,cb);
+  if ( localStorage.getItem( 'beyond-blog.thisRepository' ) ){
+    thisRepository = atob( localStorage.getItem( 'beyond-blog.thisRepository' ) );
+  }else{
+    url = 'https://api.github.com/repos/' + username + '/' + githubRepository;
+    cb = function(thisRepository){
+      localStorage.setItem( 'beyond-blog.thisRepository', btoa( JSON.stringify(thisRepository) ) );
+    };
+    go(url,cb);
+  }
 };
 
 function go(url,cb){
