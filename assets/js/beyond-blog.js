@@ -24,16 +24,15 @@ window.onload = function(){
   var elepag = document.querySelector("section nav");
 
   // Link active class on menu
-  var listItems = document.querySelectorAll("header nav a");
-  for (var variable in listItems) {
-    if (listItems.hasOwnProperty(variable)) {
-      console.log(listItems[variable].getAttribute('href'),perm);
-      if( listItems[variable].getAttribute('href') == perm ){
-        var ele = listItems[variable];
-        ele.classList.add('live');
-      }
-    }
-  }
+  // var listItems = document.querySelectorAll("header nav a");
+  // for (var variable in listItems) {
+  //   if (listItems.hasOwnProperty(variable)) {
+  //     if( listItems[variable].getAttribute('href') == perm ){
+  //       var ele = listItems[variable];
+  //       ele.classList.add('live');
+  //     }
+  //   }
+  // }
 
   // OWNER OR GUEST
   if ( localStorage.getItem( 'beyond-blog.thisRepository' ) ){

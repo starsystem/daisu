@@ -12,6 +12,6 @@
     {% include breadcrumb.html %}
   </header>
   {{ content }}
-  {% if page.path contains '_posts' and page.comments %}{% include comments.html %}{% endif %}
+  {% if page.comments %}{% include comments.html %}{% endif %}
 </section>
 {% include footer.html %}

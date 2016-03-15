@@ -8,7 +8,7 @@ $font-size: 18px
 $font-size-medium: 20px
 $font-size-big: 24px
 $font-size-huge: 1.6em
-$border: solid 2px #000
+$border: 2px solid $body-color
 $pad: 12px
 $pad-big: 19px
 $pad-huge: 1.6em
@@ -61,17 +61,18 @@ section
     padding-bottom: 1.6em
   nav
     display: inline-block
-    background: $nav-bg
+    // background: $nav-bg
+    // border-bottom: $border
     font-size: smaller
     padding: 0 .5em
-    font-weight: 700
     color: $grey
     &.paginator
+      // font-weight: 700
       padding: 0
       a
-        color: $body-color
         padding: 0 .53em
     a
+      color: $body-color
       text-decoration: none
       &:hover
         color: $links_color
@@ -138,3 +139,18 @@ img
 
 ul li span.octicon
   font-size: large
+
+// JSON EDITOR
+
+#editor_holder
+  div.nero
+    background: whitesmoke
+    padding: 0 1em .5em
+    margin-bottom: 1em
+    p.getFormInputDescription
+      display: inline-block
+      font-size: .8em
+      margin: 0 .5em
+      font-style: oblique
+    .row
+      padding: 1em 0 .5em
