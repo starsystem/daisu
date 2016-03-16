@@ -11,6 +11,7 @@ console.log(metadata,metadata.owner);
 var host = window.location.host;
 var pathArray = host.split( '.' ); // pathArray[0]
 var pathSlash = window.location.pathname.split( '/' ); // pathSlash[1]
+console.log(pathArray,pathSlash);
 // var pathHash = window.location.hash.substring( 1 ); // Drop #
 var username = pathArray[0];
 var reponame = pathSlash[1] || pathSlash[0];
