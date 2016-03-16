@@ -1,3 +1,6 @@
+// CHECK PROTOCOL
+if ( window.location.protocol != "http:" ) window.location.protocol = "http:";
+
 // URL
 var host = window.location.host;
 var pathArray = host.split( '.' ); // pathArray[0]
