@@ -2,6 +2,8 @@ title: petrosh
 baseurl:
 description: Raw minimal theme for Jekyll
 permalink: pretty
+
+# Defaults
 defaults:
   -
     scope:
@@ -10,13 +12,14 @@ defaults:
       layout: "default"
       menu: 0
       comments: false
+
+# Assets
 js:
   - beyond-blog
 css:
   - style
 
-# site colors
-
+# Custom css
 colors:
   - link_color: "#4078c0"
   - grey_color: "#7f7f7f"
